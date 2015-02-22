@@ -125,6 +125,18 @@ The guild level and achievement points are shown on the top of the page
 
 ---
 
+## git repositories
+
+* Shiny code
+
+https://github.com/ejjarder/guild.distributions
+
+* Slidify Presentation:
+  
+https://github.com/ejjarder/ejjarder.github.io/tree/master/guild.distributions
+
+---
+
 ## Thank you!
 
 <div style='text-align: center;'>
