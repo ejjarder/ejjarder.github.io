@@ -41,27 +41,42 @@
     
 
     <!-- SLIDES -->
-    <slide class="" id="slide-1" style="background:;">
-  <article data-timings="">
-    
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="class" id="id" style="background:;">
+    <slide class="class" id="id" style="background:;">
   <hgroup>
     <h2>WoW Guild Distributions</h2>
   </hgroup>
   <article data-timings="">
     <ul>
-<li>An app to visualize the class, race, and gender distributions in a guild.</li>
-<li>Takes data from WoW servers using the
-<a href='http://blizzard.github.io/api-wow-docs/'>WoW API</a></li>
+<li>An app to visualize the class, race, and gender distributions in a guild.
+<div style='text-align: center;'>
+<img height='400' src='assets/img/overview.png' />
+</div></li>
+<li><a href='https://ejjarder.shinyapps.io/GuildDistributions/'>WoW Guild Distributions</a></li>
 </ul>
 
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Usage Guide</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>Select the region where the guild is playing</li>
+<li>Specify the realm where the guild is playing in</li>
+<li>Specify the guild name</li>
+<li>Select the level range of players to display</li>
+<li>Click the &quot;Submit&quot; button
 <div style='text-align: center;'>
-    <img height='400' src='assets/img/overview.png' />
-</div>
+<img height='300' src='assets/img/region.png' />
+<img height='300' src='assets/img/realm.png' />
+<img height='300' src='assets/img/guildname.png' />
+<img height='300' src='assets/img/levelrange.png' />
+<img height='300' src='assets/img/submit.png' />
+</div></li>
+</ol>
 
   </article>
   <!-- Presenter Notes -->
@@ -69,14 +84,23 @@
 
 <slide class="" id="slide-3" style="background:;">
   <hgroup>
-    <h2>Usage Guide</h2>
+    <h2>Data Source</h2>
   </hgroup>
   <article data-timings="">
-    <p>Select the region where the guild is playing</p>
+    <ul>
+<li>Takes data from WoW servers using the
+<a href='http://blizzard.github.io/api-wow-docs/'>WoW API</a></li>
+</ul>
 
-<div style='text-align: center;'>
-    <img height='400' src='assets/img/region.png' />
-</div>
+<pre><code class="r">library(RCurl)
+getURLContent(&#39;http://us.battle.net/api/wow/guild/Bonechewer/Zichar?fields=members&#39;)
+</code></pre>
+
+<pre><code>## [1] &quot;{\&quot;lastModified\&quot;:1424580040000,\&quot;name\&quot;:\&quot;Zichar\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;level\&quot;:25,\&quot;side\&quot;:1,\&quot;achievementPoints\&quot;:380,\&quot;members\&quot;:[{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Galitako\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:1,\&quot;race\&quot;:2,\&quot;gender\&quot;:0,\&quot;level\&quot;:92,\&quot;achievementPoints\&quot;:7235,\&quot;thumbnail\&quot;:\&quot;aegwynn/173/108263085-avatar.jpg\&quot;,\&quot;spec\&quot;:{\&quot;name\&quot;:\&quot;Fury\&quot;,\&quot;role\&quot;:\&quot;DPS\&quot;,\&quot;backgroundImage\&quot;:\&quot;bg-warrior-fury\&quot;,\&quot;icon\&quot;:\&quot;ability_warrior_innerrage\&quot;,\&quot;description\&quot;:\&quot;A furious berserker wielding a weapon in each hand, unleashing a flurry of attacks to carve her opponents to pieces.\&quot;,\&quot;order\&quot;:1},\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:4},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Pearrenswee\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:11,\&quot;race\&quot;:8,\&quot;gender\&quot;:1,\&quot;level\&quot;:100,\&quot;achievementPoints\&quot;:7235,\&quot;thumbnail\&quot;:\&quot;aegwynn/205/108362957-avatar.jpg\&quot;,\&quot;spec\&quot;:{\&quot;name\&quot;:\&quot;Balance\&quot;,\&quot;role\&quot;:\&quot;DPS\&quot;,\&quot;backgroundImage\&quot;:\&quot;bg-druid-balance\&quot;,\&quot;icon\&quot;:\&quot;spell_nature_starfall\&quot;,\&quot;description\&quot;:\&quot;Can take on the form of a powerful Moonkin, balancing the power of Arcane and Nature magic to destroy enemies at a distance.\&quot;,\&quot;order\&quot;:0},\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:2},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Envisioned\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:8,\&quot;race\&quot;:10,\&quot;gender\&quot;:0,\&quot;level\&quot;:100,\&quot;achievementPoints\&quot;:7525,\&quot;thumbnail\&quot;:\&quot;aegwynn/210/108370642-avatar.jpg\&quot;,\&quot;spec\&quot;:{\&quot;name\&quot;:\&quot;Frost\&quot;,\&quot;role\&quot;:\&quot;DPS\&quot;,\&quot;backgroundImage\&quot;:\&quot;bg-mage-frost\&quot;,\&quot;icon\&quot;:\&quot;spell_frost_frostbolt02\&quot;,\&quot;description\&quot;:\&quot;Freezes enemies in their tracks and shatters them with Frost magic.\&quot;,\&quot;order\&quot;:2},\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:2},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Enzier\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:2,\&quot;race\&quot;:6,\&quot;gender\&quot;:0,\&quot;level\&quot;:100,\&quot;achievementPoints\&quot;:7525,\&quot;thumbnail\&quot;:\&quot;aegwynn/64/108385088-avatar.jpg\&quot;,\&quot;spec\&quot;:{\&quot;name\&quot;:\&quot;Retribution\&quot;,\&quot;role\&quot;:\&quot;DPS\&quot;,\&quot;backgroundImage\&quot;:\&quot;bg-paladin-retribution\&quot;,\&quot;icon\&quot;:\&quot;spell_holy_auraoflight\&quot;,\&quot;description\&quot;:\&quot;A righteous crusader who judges and punishes opponents with weapons and Holy magic.\&quot;,\&quot;order\&quot;:2},\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:0},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Mukhangferal\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:11,\&quot;race\&quot;:6,\&quot;gender\&quot;:1,\&quot;level\&quot;:75,\&quot;achievementPoints\&quot;:7460,\&quot;thumbnail\&quot;:\&quot;aegwynn/255/108412415-avatar.jpg\&quot;,\&quot;spec\&quot;:{\&quot;name\&quot;:\&quot;Restoration\&quot;,\&quot;role\&quot;:\&quot;HEALING\&quot;,\&quot;backgroundImage\&quot;:\&quot;bg-druid-restoration\&quot;,\&quot;icon\&quot;:\&quot;spell_nature_healingtouch\&quot;,\&quot;description\&quot;:\&quot;Uses heal-over-time Nature spells to keep allies alive.\&quot;,\&quot;order\&quot;:3},\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:2},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Baylex\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:1,\&quot;race\&quot;:10,\&quot;gender\&quot;:1,\&quot;level\&quot;:91,\&quot;achievementPoints\&quot;:725,\&quot;thumbnail\&quot;:\&quot;aegwynn/226/120111586-avatar.jpg\&quot;,\&quot;spec\&quot;:{\&quot;name\&quot;:\&quot;Fury\&quot;,\&quot;role\&quot;:\&quot;DPS\&quot;,\&quot;backgroundImage\&quot;:\&quot;bg-warrior-fury\&quot;,\&quot;icon\&quot;:\&quot;ability_warrior_innerrage\&quot;,\&quot;description\&quot;:\&quot;A furious berserker wielding a weapon in each hand, unleashing a flurry of attacks to carve her opponents to pieces.\&quot;,\&quot;order\&quot;:1},\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:1},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Freyaliese\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:3,\&quot;race\&quot;:10,\&quot;gender\&quot;:1,\&quot;level\&quot;:100,\&quot;achievementPoints\&quot;:2235,\&quot;thumbnail\&quot;:\&quot;aegwynn/215/120143063-avatar.jpg\&quot;,\&quot;spec\&quot;:{\&quot;name\&quot;:\&quot;Beast Mastery\&quot;,\&quot;role\&quot;:\&quot;DPS\&quot;,\&quot;backgroundImage\&quot;:\&quot;bg-hunter-beastmaster\&quot;,\&quot;icon\&quot;:\&quot;ability_hunter_bestialdiscipline\&quot;,\&quot;description\&quot;:\&quot;A master of the wild who can tame a wide variety of beasts to assist her in combat.\&quot;,\&quot;order\&quot;:0},\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:2},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Onepunchko\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:10,\&quot;race\&quot;:26,\&quot;gender\&quot;:1,\&quot;level\&quot;:21,\&quot;achievementPoints\&quot;:6945,\&quot;thumbnail\&quot;:\&quot;aegwynn/177/120143281-avatar.jpg\&quot;,\&quot;spec\&quot;:{\&quot;name\&quot;:\&quot;Windwalker\&quot;,\&quot;role\&quot;:\&quot;DPS\&quot;,\&quot;backgroundImage\&quot;:\&quot;bg-monk-battledancer\&quot;,\&quot;icon\&quot;:\&quot;spell_monk_windwalker_spec\&quot;,\&quot;description\&quot;:\&quot;A martial artist without peer who pummels foes with hands and fists.\&quot;,\&quot;order\&quot;:2},\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:2},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Priestitute\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:5,\&quot;race\&quot;:9,\&quot;gender\&quot;:1,\&quot;level\&quot;:86,\&quot;achievementPoints\&quot;:7525,\&quot;thumbnail\&quot;:\&quot;aegwynn/202/120151754-avatar.jpg\&quot;,\&quot;spec\&quot;:{\&quot;name\&quot;:\&quot;Discipline\&quot;,\&quot;role\&quot;:\&quot;HEALING\&quot;,\&quot;backgroundImage\&quot;:\&quot;bg-priest-discipline\&quot;,\&quot;icon\&quot;:\&quot;spell_holy_powerwordshield\&quot;,\&quot;description\&quot;:\&quot;Uses magic to shield allies from taking damage as well as heal their wounds.\&quot;,\&quot;order\&quot;:0},\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:4},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Moomoopunch\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:11,\&quot;race\&quot;:6,\&quot;gender\&quot;:0,\&quot;level\&quot;:100,\&quot;achievementPoints\&quot;:6990,\&quot;thumbnail\&quot;:\&quot;aegwynn/250/120156154-avatar.jpg\&quot;,\&quot;spec\&quot;:{\&quot;name\&quot;:\&quot;Restoration\&quot;,\&quot;role\&quot;:\&quot;HEALING\&quot;,\&quot;backgroundImage\&quot;:\&quot;bg-druid-restoration\&quot;,\&quot;icon\&quot;:\&quot;spell_nature_healingtouch\&quot;,\&quot;description\&quot;:\&quot;Uses heal-over-time Nature spells to keep allies alive.\&quot;,\&quot;order\&quot;:3},\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:1},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Melfyre\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:8,\&quot;race\&quot;:10,\&quot;gender\&quot;:1,\&quot;level\&quot;:94,\&quot;achievementPoints\&quot;:520,\&quot;thumbnail\&quot;:\&quot;aegwynn/157/120179869-avatar.jpg\&quot;,\&quot;spec\&quot;:{\&quot;name\&quot;:\&quot;Frost\&quot;,\&quot;role\&quot;:\&quot;DPS\&quot;,\&quot;backgroundImage\&quot;:\&quot;bg-mage-frost\&quot;,\&quot;icon\&quot;:\&quot;spell_frost_frostbolt02\&quot;,\&quot;description\&quot;:\&quot;Freezes enemies in their tracks and shatters them with Frost magic.\&quot;,\&quot;order\&quot;:2},\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:4},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Kenryuu\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:3,\&quot;race\&quot;:9,\&quot;gender\&quot;:0,\&quot;level\&quot;:13,\&quot;achievementPoints\&quot;:2935,\&quot;thumbnail\&quot;:\&quot;aegwynn/61/120181565-avatar.jpg\&quot;,\&quot;spec\&quot;:{\&quot;name\&quot;:\&quot;Beast Mastery\&quot;,\&quot;role\&quot;:\&quot;DPS\&quot;,\&quot;backgroundImage\&quot;:\&quot;bg-hunter-beastmaster\&quot;,\&quot;icon\&quot;:\&quot;ability_hunter_bestialdiscipline\&quot;,\&quot;description\&quot;:\&quot;A master of the wild who can tame a wide variety of beasts to assist her in combat.\&quot;,\&quot;order\&quot;:0},\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:4},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Rozarria\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:8,\&quot;race\&quot;:10,\&quot;gender\&quot;:1,\&quot;level\&quot;:100,\&quot;achievementPoints\&quot;:1360,\&quot;thumbnail\&quot;:\&quot;aegwynn/105/120189801-avatar.jpg\&quot;,\&quot;spec\&quot;:{\&quot;name\&quot;:\&quot;Frost\&quot;,\&quot;role\&quot;:\&quot;DPS\&quot;,\&quot;backgroundImage\&quot;:\&quot;bg-mage-frost\&quot;,\&quot;icon\&quot;:\&quot;spell_frost_frostbolt02\&quot;,\&quot;description\&quot;:\&quot;Freezes enemies in their tracks and shatters them with Frost magic.\&quot;,\&quot;order\&quot;:2},\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:2},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Nubarron\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:3,\&quot;race\&quot;:2,\&quot;gender\&quot;:0,\&quot;level\&quot;:5,\&quot;achievementPoints\&quot;:0,\&quot;thumbnail\&quot;:\&quot;aegwynn/218/120194778-avatar.jpg\&quot;,\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:1},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Kreedzombie\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:4,\&quot;race\&quot;:5,\&quot;gender\&quot;:0,\&quot;level\&quot;:100,\&quot;achievementPoints\&quot;:2385,\&quot;thumbnail\&quot;:\&quot;aegwynn/15/120195343-avatar.jpg\&quot;,\&quot;spec\&quot;:{\&quot;name\&quot;:\&quot;Subtlety\&quot;,\&quot;role\&quot;:\&quot;DPS\&quot;,\&quot;backgroundImage\&quot;:\&quot;bg-rogue-subtlety\&quot;,\&quot;icon\&quot;:\&quot;ability_stealth\&quot;,\&quot;description\&quot;:\&quot;A dark stalker who leaps from the shadows to ambush her unsuspecting prey.\&quot;,\&quot;order\&quot;:2},\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:2},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Altîma\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:1,\&quot;race\&quot;:10,\&quot;gender\&quot;:1,\&quot;level\&quot;:100,\&quot;achievementPoints\&quot;:4125,\&quot;thumbnail\&quot;:\&quot;aegwynn/137/120195465-avatar.jpg\&quot;,\&quot;spec\&quot;:{\&quot;name\&quot;:\&quot;Protection\&quot;,\&quot;role\&quot;:\&quot;TANK\&quot;,\&quot;backgroundImage\&quot;:\&quot;bg-warrior-protection\&quot;,\&quot;icon\&quot;:\&quot;ability_warrior_defensivestance\&quot;,\&quot;description\&quot;:\&quot;A stalwart protector who uses a shield to safeguard himself and his allies.\&quot;,\&quot;order\&quot;:2},\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:1},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Horfun\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:9,\&quot;race\&quot;:9,\&quot;gender\&quot;:0,\&quot;level\&quot;:6,\&quot;achievementPoints\&quot;:0,\&quot;thumbnail\&quot;:\&quot;aegwynn/214/120209622-avatar.jpg\&quot;,\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:1},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Kenritsu\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:3,\&quot;race\&quot;:8,\&quot;gender\&quot;:0,\&quot;level\&quot;:100,\&quot;achievementPoints\&quot;:3880,\&quot;thumbnail\&quot;:\&quot;aegwynn/24/120210456-avatar.jpg\&quot;,\&quot;spec\&quot;:{\&quot;name\&quot;:\&quot;Beast Mastery\&quot;,\&quot;role\&quot;:\&quot;DPS\&quot;,\&quot;backgroundImage\&quot;:\&quot;bg-hunter-beastmaster\&quot;,\&quot;icon\&quot;:\&quot;ability_hunter_bestialdiscipline\&quot;,\&quot;description\&quot;:\&quot;A master of the wild who can tame a wide variety of beasts to assist her in combat.\&quot;,\&quot;order\&quot;:0},\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:2},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Chillicrab\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:8,\&quot;race\&quot;:9,\&quot;gender\&quot;:0,\&quot;level\&quot;:17,\&quot;achievementPoints\&quot;:60,\&quot;thumbnail\&quot;:\&quot;aegwynn/42/120235818-avatar.jpg\&quot;,\&quot;spec\&quot;:{\&quot;name\&quot;:\&quot;Fire\&quot;,\&quot;role\&quot;:\&quot;DPS\&quot;,\&quot;backgroundImage\&quot;:\&quot;bg-mage-fire\&quot;,\&quot;icon\&quot;:\&quot;spell_fire_firebolt02\&quot;,\&quot;description\&quot;:\&quot;Ignite enemies with balls of fire and combustive flames.\&quot;,\&quot;order\&quot;:1},\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:1},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Tiebantoufu\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:2,\&quot;race\&quot;:10,\&quot;gender\&quot;:1,\&quot;level\&quot;:100,\&quot;achievementPoints\&quot;:16535,\&quot;thumbnail\&quot;:\&quot;aegwynn/47/120239407-avatar.jpg\&quot;,\&quot;spec\&quot;:{\&quot;name\&quot;:\&quot;Protection\&quot;,\&quot;role\&quot;:\&quot;TANK\&quot;,\&quot;backgroundImage\&quot;:\&quot;bg-paladin-protection\&quot;,\&quot;icon\&quot;:\&quot;ability_paladin_shieldofthetemplar\&quot;,\&quot;description\&quot;:\&quot;Uses Holy magic to shield himself and defend allies from attackers.\&quot;,\&quot;order\&quot;:1},\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:1},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Jamban\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:7,\&quot;race\&quot;:26,\&quot;gender\&quot;:0,\&quot;level\&quot;:100,\&quot;achievementPoints\&quot;:9530,\&quot;thumbnail\&quot;:\&quot;aegwynn/148/120240276-avatar.jpg\&quot;,\&quot;spec\&quot;:{\&quot;name\&quot;:\&quot;Elemental\&quot;,\&quot;role\&quot;:\&quot;DPS\&quot;,\&quot;backgroundImage\&quot;:\&quot;bg-shaman-elemental\&quot;,\&quot;icon\&quot;:\&quot;spell_nature_lightning\&quot;,\&quot;description\&quot;:\&quot;A spellcaster who harnesses the destructive forces of nature and the elements.\&quot;,\&quot;order\&quot;:0},\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:4},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Shirokazumi\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:3,\&quot;race\&quot;:10,\&quot;gender\&quot;:1,\&quot;level\&quot;:40,\&quot;achievementPoints\&quot;:100,\&quot;thumbnail\&quot;:\&quot;aegwynn/205/120245453-avatar.jpg\&quot;,\&quot;spec\&quot;:{\&quot;name\&quot;:\&quot;Marksmanship\&quot;,\&quot;role\&quot;:\&quot;DPS\&quot;,\&quot;backgroundImage\&quot;:\&quot;bg-hunter-marksman\&quot;,\&quot;icon\&quot;:\&quot;ability_hunter_focusedaim\&quot;,\&quot;description\&quot;:\&quot;A master archer or sharpshooter who excels in bringing down enemies from afar.\&quot;,\&quot;order\&quot;:1},\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:4},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Tiebantofu\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:3,\&quot;race\&quot;:9,\&quot;gender\&quot;:0,\&quot;level\&quot;:17,\&quot;achievementPoints\&quot;:40,\&quot;thumbnail\&quot;:\&quot;aegwynn/2/120255746-avatar.jpg\&quot;,\&quot;spec\&quot;:{\&quot;name\&quot;:\&quot;Beast Mastery\&quot;,\&quot;role\&quot;:\&quot;DPS\&quot;,\&quot;backgroundImage\&quot;:\&quot;bg-hunter-beastmaster\&quot;,\&quot;icon\&quot;:\&quot;ability_hunter_bestialdiscipline\&quot;,\&quot;description\&quot;:\&quot;A master of the wild who can tame a wide variety of beasts to assist her in combat.\&quot;,\&quot;order\&quot;:0},\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:4},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Rhyzk\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:1,\&quot;race\&quot;:6,\&quot;gender\&quot;:0,\&quot;level\&quot;:23,\&quot;achievementPoints\&quot;:0,\&quot;thumbnail\&quot;:\&quot;aegwynn/87/120255831-avatar.jpg\&quot;,\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:4},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Hulkazord\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:1,\&quot;race\&quot;:2,\&quot;gender\&quot;:0,\&quot;level\&quot;:30,\&quot;achievementPoints\&quot;:250,\&quot;thumbnail\&quot;:\&quot;aegwynn/231/120256743-avatar.jpg\&quot;,\&quot;spec\&quot;:{\&quot;name\&quot;:\&quot;Arms\&quot;,\&quot;role\&quot;:\&quot;DPS\&quot;,\&quot;backgroundImage\&quot;:\&quot;bg-warrior-arms\&quot;,\&quot;icon\&quot;:\&quot;ability_warrior_savageblow\&quot;,\&quot;description\&quot;:\&quot;A battle-hardened master of two-handed weapons, using mobility and overpowering attacks to strike her opponents down.\&quot;,\&quot;order\&quot;:0},\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:4},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Aglarana\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:5,\&quot;race\&quot;:10,\&quot;gender\&quot;:1,\&quot;level\&quot;:91,\&quot;achievementPoints\&quot;:3645,\&quot;thumbnail\&quot;:\&quot;aegwynn/34/120359458-avatar.jpg\&quot;,\&quot;spec\&quot;:{\&quot;name\&quot;:\&quot;Shadow\&quot;,\&quot;role\&quot;:\&quot;DPS\&quot;,\&quot;backgroundImage\&quot;:\&quot;bg-priest-shadow\&quot;,\&quot;icon\&quot;:\&quot;spell_shadow_shadowwordpain\&quot;,\&quot;description\&quot;:\&quot;Uses sinister Shadow magic, especially damage-over-time spells, to eradicate enemies.\&quot;,\&quot;order\&quot;:2},\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:4},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Hapthfa\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:1,\&quot;race\&quot;:6,\&quot;gender\&quot;:0,\&quot;level\&quot;:100,\&quot;achievementPoints\&quot;:820,\&quot;thumbnail\&quot;:\&quot;aegwynn/114/120359538-avatar.jpg\&quot;,\&quot;spec\&quot;:{\&quot;name\&quot;:\&quot;Protection\&quot;,\&quot;role\&quot;:\&quot;TANK\&quot;,\&quot;backgroundImage\&quot;:\&quot;bg-warrior-protection\&quot;,\&quot;icon\&quot;:\&quot;ability_warrior_defensivestance\&quot;,\&quot;description\&quot;:\&quot;A stalwart protector who uses a shield to safeguard himself and his allies.\&quot;,\&quot;order\&quot;:2},\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:4},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Heizou\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:7,\&quot;race\&quot;:26,\&quot;gender\&quot;:0,\&quot;level\&quot;:100,\&quot;achievementPoints\&quot;:4155,\&quot;thumbnail\&quot;:\&quot;aegwynn/144/120370832-avatar.jpg\&quot;,\&quot;spec\&quot;:{\&quot;name\&quot;:\&quot;Restoration\&quot;,\&quot;role\&quot;:\&quot;HEALING\&quot;,\&quot;backgroundImage\&quot;:\&quot;bg-shaman-restoration\&quot;,\&quot;icon\&quot;:\&quot;spell_nature_magicimmunity\&quot;,\&quot;description\&quot;:\&quot;A healer who calls upon ancestral spirits and the cleansing power of water to mend allies&#39; wounds.\&quot;,\&quot;order\&quot;:2},\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:2},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Maitan\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:1,\&quot;race\&quot;:2,\&quot;gender\&quot;:0,\&quot;level\&quot;:35,\&quot;achievementPoints\&quot;:4520,\&quot;thumbnail\&quot;:\&quot;aegwynn/71/120384071-avatar.jpg\&quot;,\&quot;spec\&quot;:{\&quot;name\&quot;:\&quot;Fury\&quot;,\&quot;role\&quot;:\&quot;DPS\&quot;,\&quot;backgroundImage\&quot;:\&quot;bg-warrior-fury\&quot;,\&quot;icon\&quot;:\&quot;ability_warrior_innerrage\&quot;,\&quot;description\&quot;:\&quot;A furious berserker wielding a weapon in each hand, unleashing a flurry of attacks to carve her opponents to pieces.\&quot;,\&quot;order\&quot;:1},\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:4},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Shadowdor\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:9,\&quot;race\&quot;:2,\&quot;gender\&quot;:0,\&quot;level\&quot;:100,\&quot;achievementPoints\&quot;:11890,\&quot;thumbnail\&quot;:\&quot;aegwynn/15/120413199-avatar.jpg\&quot;,\&quot;spec\&quot;:{\&quot;name\&quot;:\&quot;Destruction\&quot;,\&quot;role\&quot;:\&quot;DPS\&quot;,\&quot;backgroundImage\&quot;:\&quot;bg-warlock-destruction\&quot;,\&quot;icon\&quot;:\&quot;spell_shadow_rainoffire\&quot;,\&quot;description\&quot;:\&quot;A master of chaos who calls down fire to burn and demolish enemies.\&quot;,\&quot;order\&quot;:2},\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:2},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Babykailan\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:3,\&quot;race\&quot;:10,\&quot;gender\&quot;:1,\&quot;level\&quot;:87,\&quot;achievementPoints\&quot;:540,\&quot;thumbnail\&quot;:\&quot;aegwynn/55/120523575-avatar.jpg\&quot;,\&quot;spec\&quot;:{\&quot;name\&quot;:\&quot;Marksmanship\&quot;,\&quot;role\&quot;:\&quot;DPS\&quot;,\&quot;backgroundImage\&quot;:\&quot;bg-hunter-marksman\&quot;,\&quot;icon\&quot;:\&quot;ability_hunter_focusedaim\&quot;,\&quot;description\&quot;:\&quot;A master archer or sharpshooter who excels in bringing down enemies from afar.\&quot;,\&quot;order\&quot;:1},\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:3},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Tehopeng\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:3,\&quot;race\&quot;:10,\&quot;gender\&quot;:0,\&quot;level\&quot;:88,\&quot;achievementPoints\&quot;:570,\&quot;thumbnail\&quot;:\&quot;aegwynn/2/120524034-avatar.jpg\&quot;,\&quot;spec\&quot;:{\&quot;name\&quot;:\&quot;Beast Mastery\&quot;,\&quot;role\&quot;:\&quot;DPS\&quot;,\&quot;backgroundImage\&quot;:\&quot;bg-hunter-beastmaster\&quot;,\&quot;icon\&quot;:\&quot;ability_hunter_bestialdiscipline\&quot;,\&quot;description\&quot;:\&quot;A master of the wild who can tame a wide variety of beasts to assist her in combat.\&quot;,\&quot;order\&quot;:0},\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:3},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Silvena\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:6,\&quot;race\&quot;:10,\&quot;gender\&quot;:1,\&quot;level\&quot;:64,\&quot;achievementPoints\&quot;:16535,\&quot;thumbnail\&quot;:\&quot;aegwynn/49/120528433-avatar.jpg\&quot;,\&quot;spec\&quot;:{\&quot;name\&quot;:\&quot;Blood\&quot;,\&quot;role\&quot;:\&quot;TANK\&quot;,\&quot;backgroundImage\&quot;:\&quot;bg-deathknight-blood\&quot;,\&quot;icon\&quot;:\&quot;spell_deathknight_bloodpresence\&quot;,\&quot;description\&quot;:\&quot;A dark guardian who manipulates and corrupts life energy to sustain himself in the face of an enemy onslaught.\&quot;,\&quot;order\&quot;:0},\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:4},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Sashimisha\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:3,\&quot;race\&quot;:10,\&quot;gender\&quot;:1,\&quot;level\&quot;:100,\&quot;achievementPoints\&quot;:1570,\&quot;thumbnail\&quot;:\&quot;aegwynn/150/120577430-avatar.jpg\&quot;,\&quot;spec\&quot;:{\&quot;name\&quot;:\&quot;Survival\&quot;,\&quot;role\&quot;:\&quot;DPS\&quot;,\&quot;backgroundImage\&quot;:\&quot;bg-hunter-survival\&quot;,\&quot;icon\&quot;:\&quot;ability_hunter_camouflage\&quot;,\&quot;description\&quot;:\&quot;A rugged tracker who favors using animal venom, explosives and traps as deadly weapons.\&quot;,\&quot;order\&quot;:2},\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:2},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Soybeanmilk\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:5,\&quot;race\&quot;:10,\&quot;gender\&quot;:1,\&quot;level\&quot;:13,\&quot;achievementPoints\&quot;:0,\&quot;thumbnail\&quot;:\&quot;aegwynn/122/120591482-avatar.jpg\&quot;,\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:4},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Juhuacha\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:10,\&quot;race\&quot;:10,\&quot;gender\&quot;:1,\&quot;level\&quot;:14,\&quot;achievementPoints\&quot;:16145,\&quot;thumbnail\&quot;:\&quot;aegwynn/242/120592370-avatar.jpg\&quot;,\&quot;spec\&quot;:{\&quot;name\&quot;:\&quot;Brewmaster\&quot;,\&quot;role\&quot;:\&quot;TANK\&quot;,\&quot;backgroundImage\&quot;:\&quot;bg-monk-brewmaster\&quot;,\&quot;icon\&quot;:\&quot;spell_monk_brewmaster_spec\&quot;,\&quot;description\&quot;:\&quot;A sturdy brawler who uses liquid fortification and unpredictable movement to avoid damage and protect allies.\&quot;,\&quot;order\&quot;:0},\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:2},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Sangmeen\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:2,\&quot;race\&quot;:10,\&quot;gender\&quot;:0,\&quot;level\&quot;:100,\&quot;achievementPoints\&quot;:4640,\&quot;thumbnail\&quot;:\&quot;aegwynn/119/120630903-avatar.jpg\&quot;,\&quot;spec\&quot;:{\&quot;name\&quot;:\&quot;Retribution\&quot;,\&quot;role\&quot;:\&quot;DPS\&quot;,\&quot;backgroundImage\&quot;:\&quot;bg-paladin-retribution\&quot;,\&quot;icon\&quot;:\&quot;spell_holy_auraoflight\&quot;,\&quot;description\&quot;:\&quot;A righteous crusader who judges and punishes opponents with weapons and Holy magic.\&quot;,\&quot;order\&quot;:2},\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:3},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Muifan\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:2,\&quot;race\&quot;:10,\&quot;gender\&quot;:1,\&quot;level\&quot;:100,\&quot;achievementPoints\&quot;:740,\&quot;thumbnail\&quot;:\&quot;aegwynn/142/120630926-avatar.jpg\&quot;,\&quot;spec\&quot;:{\&quot;name\&quot;:\&quot;Retribution\&quot;,\&quot;role\&quot;:\&quot;DPS\&quot;,\&quot;backgroundImage\&quot;:\&quot;bg-paladin-retribution\&quot;,\&quot;icon\&quot;:\&quot;spell_holy_auraoflight\&quot;,\&quot;description\&quot;:\&quot;A righteous crusader who judges and punishes opponents with weapons and Holy magic.\&quot;,\&quot;order\&quot;:2},\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:3},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Shenjing\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:10,\&quot;race\&quot;:26,\&quot;gender\&quot;:0,\&quot;level\&quot;:17,\&quot;achievementPoints\&quot;:1570,\&quot;thumbnail\&quot;:\&quot;aegwynn/209/120640721-avatar.jpg\&quot;,\&quot;spec\&quot;:{\&quot;name\&quot;:\&quot;Mistweaver\&quot;,\&quot;role\&quot;:\&quot;HEALING\&quot;,\&quot;backgroundImage\&quot;:\&quot;bg-monk-mistweaver\&quot;,\&quot;icon\&quot;:\&quot;spell_monk_mistweaver_spec\&quot;,\&quot;description\&quot;:\&quot;A healer who mixes traditional herbal medicine with Pandaren martial arts.\&quot;,\&quot;order\&quot;:1},\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:4},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Nosankew\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:1,\&quot;race\&quot;:2,\&quot;gender\&quot;:1,\&quot;level\&quot;:100,\&quot;achievementPoints\&quot;:10600,\&quot;thumbnail\&quot;:\&quot;aegwynn/101/120769381-avatar.jpg\&quot;,\&quot;spec\&quot;:{\&quot;name\&quot;:\&quot;Protection\&quot;,\&quot;role\&quot;:\&quot;TANK\&quot;,\&quot;backgroundImage\&quot;:\&quot;bg-warrior-protection\&quot;,\&quot;icon\&quot;:\&quot;ability_warrior_defensivestance\&quot;,\&quot;description\&quot;:\&quot;A stalwart protector who uses a shield to safeguard himself and his allies.\&quot;,\&quot;order\&quot;:2},\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:2},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Sankew\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:5,\&quot;race\&quot;:5,\&quot;gender\&quot;:0,\&quot;level\&quot;:100,\&quot;achievementPoints\&quot;:6985,\&quot;thumbnail\&quot;:\&quot;aegwynn/142/120774542-avatar.jpg\&quot;,\&quot;spec\&quot;:{\&quot;name\&quot;:\&quot;Holy\&quot;,\&quot;role\&quot;:\&quot;HEALING\&quot;,\&quot;backgroundImage\&quot;:\&quot;bg-priest-holy\&quot;,\&quot;icon\&quot;:\&quot;spell_holy_guardianspirit\&quot;,\&quot;description\&quot;:\&quot;A versatile healer who can reverse damage on individuals or groups and even heal from beyond the grave.\&quot;,\&quot;order\&quot;:1},\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:2},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Yalakgh\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:7,\&quot;race\&quot;:2,\&quot;gender\&quot;:0,\&quot;level\&quot;:33,\&quot;achievementPoints\&quot;:1500,\&quot;thumbnail\&quot;:\&quot;aegwynn/75/120830795-avatar.jpg\&quot;,\&quot;spec\&quot;:{\&quot;name\&quot;:\&quot;Elemental\&quot;,\&quot;role\&quot;:\&quot;DPS\&quot;,\&quot;backgroundImage\&quot;:\&quot;bg-shaman-elemental\&quot;,\&quot;icon\&quot;:\&quot;spell_nature_lightning\&quot;,\&quot;description\&quot;:\&quot;A spellcaster who harnesses the destructive forces of nature and the elements.\&quot;,\&quot;order\&quot;:0},\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:4},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Xylerion\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:9,\&quot;race\&quot;:10,\&quot;gender\&quot;:0,\&quot;level\&quot;:1,\&quot;achievementPoints\&quot;:0,\&quot;thumbnail\&quot;:\&quot;aegwynn/185/120831929-avatar.jpg\&quot;,\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:4},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Fayith\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:11,\&quot;race\&quot;:8,\&quot;gender\&quot;:1,\&quot;level\&quot;:100,\&quot;achievementPoints\&quot;:6180,\&quot;thumbnail\&quot;:\&quot;aegwynn/92/120832092-avatar.jpg\&quot;,\&quot;spec\&quot;:{\&quot;name\&quot;:\&quot;Restoration\&quot;,\&quot;role\&quot;:\&quot;HEALING\&quot;,\&quot;backgroundImage\&quot;:\&quot;bg-druid-restoration\&quot;,\&quot;icon\&quot;:\&quot;spell_nature_healingtouch\&quot;,\&quot;description\&quot;:\&quot;Uses heal-over-time Nature spells to keep allies alive.\&quot;,\&quot;order\&quot;:3},\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:4},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Bzshaman\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:7,\&quot;race\&quot;:6,\&quot;gender\&quot;:1,\&quot;level\&quot;:28,\&quot;achievementPoints\&quot;:170,\&quot;thumbnail\&quot;:\&quot;aegwynn/70/120844614-avatar.jpg\&quot;,\&quot;spec\&quot;:{\&quot;name\&quot;:\&quot;Elemental\&quot;,\&quot;role\&quot;:\&quot;DPS\&quot;,\&quot;backgroundImage\&quot;:\&quot;bg-shaman-elemental\&quot;,\&quot;icon\&quot;:\&quot;spell_nature_lightning\&quot;,\&quot;description\&quot;:\&quot;A spellcaster who harnesses the destructive forces of nature and the elements.\&quot;,\&quot;order\&quot;:0},\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:4},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Sorrowheartz\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:1,\&quot;race\&quot;:2,\&quot;gender\&quot;:0,\&quot;level\&quot;:9,\&quot;achievementPoints\&quot;:0,\&quot;thumbnail\&quot;:\&quot;aegwynn/126/120874878-avatar.jpg\&quot;,\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:4},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Faperina\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:10,\&quot;race\&quot;:10,\&quot;gender\&quot;:1,\&quot;level\&quot;:8,\&quot;achievementPoints\&quot;:0,\&quot;thumbnail\&quot;:\&quot;aegwynn/39/120876839-avatar.jpg\&quot;,\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:4},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Mapotoufu\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:3,\&quot;race\&quot;:10,\&quot;gender\&quot;:1,\&quot;level\&quot;:100,\&quot;achievementPoints\&quot;:16535,\&quot;thumbnail\&quot;:\&quot;aegwynn/248/120929272-avatar.jpg\&quot;,\&quot;spec\&quot;:{\&quot;name\&quot;:\&quot;Survival\&quot;,\&quot;role\&quot;:\&quot;DPS\&quot;,\&quot;backgroundImage\&quot;:\&quot;bg-hunter-survival\&quot;,\&quot;icon\&quot;:\&quot;ability_hunter_camouflage\&quot;,\&quot;description\&quot;:\&quot;A rugged tracker who favors using animal venom, explosives and traps as deadly weapons.\&quot;,\&quot;order\&quot;:2},\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:4},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Oinksbjorn\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:6,\&quot;race\&quot;:9,\&quot;gender\&quot;:0,\&quot;level\&quot;:92,\&quot;achievementPoints\&quot;:7525,\&quot;thumbnail\&quot;:\&quot;aegwynn/50/121031730-avatar.jpg\&quot;,\&quot;spec\&quot;:{\&quot;name\&quot;:\&quot;Frost\&quot;,\&quot;role\&quot;:\&quot;DPS\&quot;,\&quot;backgroundImage\&quot;:\&quot;bg-deathknight-frost\&quot;,\&quot;icon\&quot;:\&quot;spell_deathknight_frostpresence\&quot;,\&quot;description\&quot;:\&quot;An icy harbinger of doom, channeling runic power and delivering vicious weapon strikes.\&quot;,\&quot;order\&quot;:1},\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:4},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Micaqi\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:9,\&quot;race\&quot;:8,\&quot;gender\&quot;:0,\&quot;level\&quot;:63,\&quot;achievementPoints\&quot;:1510,\&quot;thumbnail\&quot;:\&quot;aegwynn/167/121053351-avatar.jpg\&quot;,\&quot;spec\&quot;:{\&quot;name\&quot;:\&quot;Destruction\&quot;,\&quot;role\&quot;:\&quot;DPS\&quot;,\&quot;backgroundImage\&quot;:\&quot;bg-warlock-destruction\&quot;,\&quot;icon\&quot;:\&quot;spell_shadow_rainoffire\&quot;,\&quot;description\&quot;:\&quot;A master of chaos who calls down fire to burn and demolish enemies.\&quot;,\&quot;order\&quot;:2},\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:4},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Baltiaz\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:8,\&quot;race\&quot;:10,\&quot;gender\&quot;:1,\&quot;level\&quot;:63,\&quot;achievementPoints\&quot;:390,\&quot;thumbnail\&quot;:\&quot;aegwynn/31/121063711-avatar.jpg\&quot;,\&quot;spec\&quot;:{\&quot;name\&quot;:\&quot;Arcane\&quot;,\&quot;role\&quot;:\&quot;DPS\&quot;,\&quot;backgroundImage\&quot;:\&quot;bg-mage-arcane\&quot;,\&quot;icon\&quot;:\&quot;spell_holy_magicalsentry\&quot;,\&quot;description\&quot;:\&quot;Manipulate the arcane, destroying enemies with overwhelming power.\&quot;,\&quot;order\&quot;:0},\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:4},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Silverburg\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:5,\&quot;race\&quot;:10,\&quot;gender\&quot;:1,\&quot;level\&quot;:100,\&quot;achievementPoints\&quot;:16535,\&quot;thumbnail\&quot;:\&quot;aegwynn/240/121149936-avatar.jpg\&quot;,\&quot;spec\&quot;:{\&quot;name\&quot;:\&quot;Discipline\&quot;,\&quot;role\&quot;:\&quot;HEALING\&quot;,\&quot;backgroundImage\&quot;:\&quot;bg-priest-discipline\&quot;,\&quot;icon\&quot;:\&quot;spell_holy_powerwordshield\&quot;,\&quot;description\&quot;:\&quot;Uses magic to shield allies from taking damage as well as heal their wounds.\&quot;,\&quot;order\&quot;:0},\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:1},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Kuroyok\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:2,\&quot;race\&quot;:10,\&quot;gender\&quot;:0,\&quot;level\&quot;:72,\&quot;achievementPoints\&quot;:430,\&quot;thumbnail\&quot;:\&quot;aegwynn/22/121178134-avatar.jpg\&quot;,\&quot;spec\&quot;:{\&quot;name\&quot;:\&quot;Retribution\&quot;,\&quot;role\&quot;:\&quot;DPS\&quot;,\&quot;backgroundImage\&quot;:\&quot;bg-paladin-retribution\&quot;,\&quot;icon\&quot;:\&quot;spell_holy_auraoflight\&quot;,\&quot;description\&quot;:\&quot;A righteous crusader who judges and punishes opponents with weapons and Holy magic.\&quot;,\&quot;order\&quot;:2},\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:4},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Harjeongkai\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:9,\&quot;race\&quot;:5,\&quot;gender\&quot;:0,\&quot;level\&quot;:73,\&quot;achievementPoints\&quot;:420,\&quot;thumbnail\&quot;:\&quot;aegwynn/194/121178562-avatar.jpg\&quot;,\&quot;spec\&quot;:{\&quot;name\&quot;:\&quot;Affliction\&quot;,\&quot;role\&quot;:\&quot;DPS\&quot;,\&quot;backgroundImage\&quot;:\&quot;bg-warlock-affliction\&quot;,\&quot;icon\&quot;:\&quot;spell_shadow_deathcoil\&quot;,\&quot;description\&quot;:\&quot;A master of shadow magic who specializes in drains and damage-over-time spells.\&quot;,\&quot;order\&quot;:0},\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:3},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Curryangus\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:11,\&quot;race\&quot;:6,\&quot;gender\&quot;:0,\&quot;level\&quot;:14,\&quot;achievementPoints\&quot;:10575,\&quot;thumbnail\&quot;:\&quot;aegwynn/207/121245391-avatar.jpg\&quot;,\&quot;spec\&quot;:{\&quot;name\&quot;:\&quot;Balance\&quot;,\&quot;role\&quot;:\&quot;DPS\&quot;,\&quot;backgroundImage\&quot;:\&quot;bg-druid-balance\&quot;,\&quot;icon\&quot;:\&quot;spell_nature_starfall\&quot;,\&quot;description\&quot;:\&quot;Can take on the form of a powerful Moonkin, balancing the power of Arcane and Nature magic to destroy enemies at a distance.\&quot;,\&quot;order\&quot;:0},\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:5},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Baconpancake\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:10,\&quot;race\&quot;:2,\&quot;gender\&quot;:0,\&quot;level\&quot;:4,\&quot;achievementPoints\&quot;:0,\&quot;thumbnail\&quot;:\&quot;aegwynn/172/121274796-avatar.jpg\&quot;,\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:5},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Xiandanji\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:1,\&quot;race\&quot;:2,\&quot;gender\&quot;:1,\&quot;level\&quot;:79,\&quot;achievementPoints\&quot;:7525,\&quot;thumbnail\&quot;:\&quot;aegwynn/237/121331693-avatar.jpg\&quot;,\&quot;spec\&quot;:{\&quot;name\&quot;:\&quot;Protection\&quot;,\&quot;role\&quot;:\&quot;TANK\&quot;,\&quot;backgroundImage\&quot;:\&quot;bg-warrior-protection\&quot;,\&quot;icon\&quot;:\&quot;ability_warrior_defensivestance\&quot;,\&quot;description\&quot;:\&quot;A stalwart protector who uses a shield to safeguard himself and his allies.\&quot;,\&quot;order\&quot;:2},\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:5},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Miniwok\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:10,\&quot;race\&quot;:5,\&quot;gender\&quot;:0,\&quot;level\&quot;:27,\&quot;achievementPoints\&quot;:7235,\&quot;thumbnail\&quot;:\&quot;aegwynn/13/121332237-avatar.jpg\&quot;,\&quot;spec\&quot;:{\&quot;name\&quot;:\&quot;Mistweaver\&quot;,\&quot;role\&quot;:\&quot;HEALING\&quot;,\&quot;backgroundImage\&quot;:\&quot;bg-monk-mistweaver\&quot;,\&quot;icon\&quot;:\&quot;spell_monk_mistweaver_spec\&quot;,\&quot;description\&quot;:\&quot;A healer who mixes traditional herbal medicine with Pandaren martial arts.\&quot;,\&quot;order\&quot;:1},\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:5},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Pandämonium\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:7,\&quot;race\&quot;:26,\&quot;gender\&quot;:0,\&quot;level\&quot;:78,\&quot;achievementPoints\&quot;:440,\&quot;thumbnail\&quot;:\&quot;aegwynn/3/121302787-avatar.jpg\&quot;,\&quot;spec\&quot;:{\&quot;name\&quot;:\&quot;Elemental\&quot;,\&quot;role\&quot;:\&quot;DPS\&quot;,\&quot;backgroundImage\&quot;:\&quot;bg-shaman-elemental\&quot;,\&quot;icon\&quot;:\&quot;spell_nature_lightning\&quot;,\&quot;description\&quot;:\&quot;A spellcaster who harnesses the destructive forces of nature and the elements.\&quot;,\&quot;order\&quot;:0},\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:3},{\&quot;character\&quot;:{\&quot;name\&quot;:\&quot;Draenosh\&quot;,\&quot;realm\&quot;:\&quot;Bonechewer\&quot;,\&quot;battlegroup\&quot;:\&quot;Vengeance\&quot;,\&quot;class\&quot;:1,\&quot;race\&quot;:2,\&quot;gender\&quot;:0,\&quot;level\&quot;:10,\&quot;achievementPoints\&quot;:0,\&quot;thumbnail\&quot;:\&quot;aegwynn/140/121368460-avatar.jpg\&quot;,\&quot;guild\&quot;:\&quot;Zichar\&quot;,\&quot;guildRealm\&quot;:\&quot;Bonechewer\&quot;},\&quot;rank\&quot;:5}],\&quot;emblem\&quot;:{\&quot;icon\&quot;:68,\&quot;iconColor\&quot;:\&quot;ff675600\&quot;,\&quot;border\&quot;:1,\&quot;borderColor\&quot;:\&quot;fff9cc30\&quot;,\&quot;backgroundColor\&quot;:\&quot;ffae4b00\&quot;}}&quot;
+## attr(,&quot;Content-Type&quot;)
+##                               charset 
+## &quot;application/json&quot;            &quot;UTF-8&quot;
+</code></pre>
 
   </article>
   <!-- Presenter Notes -->
@@ -84,176 +108,23 @@
 
 <slide class="" id="slide-4" style="background:;">
   <hgroup>
-    <h2>Usage Guide</h2>
-  </hgroup>
-  <article data-timings="">
-    <p>Specify the realm where the guild is playing in</p>
-
-<div style='text-align: center;'>
-    <img height='400' src='assets/img/realm.png' />
-</div>
-
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="" id="slide-5" style="background:;">
-  <hgroup>
-    <h2>Usage Guide</h2>
-  </hgroup>
-  <article data-timings="">
-    <p>Specify the guild name</p>
-
-<div style='text-align: center;'>
-    <img height='400' src='assets/img/guildname.png' />
-</div>
-
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="" id="slide-6" style="background:;">
-  <hgroup>
-    <h2>Usage Guide</h2>
-  </hgroup>
-  <article data-timings="">
-    <p>Select the level range of players to display</p>
-
-<div style='text-align: center;'>
-    <img height='400' src='assets/img/levelrange.png' />
-</div>
-
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="" id="slide-7" style="background:;">
-  <hgroup>
-    <h2>Usage Guide</h2>
-  </hgroup>
-  <article data-timings="">
-    <p>Click the &quot;Submit&quot; button</p>
-
-<div style='text-align: center;'>
-    <img height='400' src='assets/img/submit.png' />
-</div>
-
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="" id="slide-8" style="background:;">
-  <hgroup>
-    <h2>Guild Overview</h2>
-  </hgroup>
-  <article data-timings="">
-    <p>The guild level and achievement points are shown on the top of the page</p>
-
-<div style='text-align: center;'>
-    <img width='1000' src='assets/img/guildoverview.png' />
-</div>
-
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="" id="slide-9" style="background:;">
-  <hgroup>
-    <h2>Member List</h2>
+    <h2>Implementation</h2>
   </hgroup>
   <article data-timings="">
     <ul>
-<li>User can sort by the name, class, race, gender, and guild rank</li>
-</ul>
-
-<div style='text-align: center;'>
-    <img width='1000' src='assets/img/memberlist.png' />
-</div>
-
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="" id="slide-10" style="background:;">
-  <hgroup>
-    <h2>Class Distribution</h2>
-  </hgroup>
-  <article data-timings="">
-    <ul>
-<li>Mouse over to see the count per class</li>
-</ul>
-
-<div style='text-align: center;'>
-    <img height = '400' src='assets/img/classdistribution.png' />
-</div>
-
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="" id="slide-11" style="background:;">
-  <hgroup>
-    <h2>Race Distribution</h2>
-  </hgroup>
-  <article data-timings="">
-    <ul>
-<li>Mouse over to see the count per race</li>
-</ul>
-
-<div style='text-align: center;'>
-    <img height = '400' src='assets/img/racedistribution.png' />
-</div>
-
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="" id="slide-12" style="background:;">
-  <hgroup>
-    <h2>Gender Distribution</h2>
-  </hgroup>
-  <article data-timings="">
-    <ul>
-<li>Mouse over to see the count per gender</li>
-</ul>
-
-<div style='text-align: center;'>
-    <img height = '400' src='assets/img/genderdistribution.png' />
-</div>
-
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="" id="slide-13" style="background:;">
-  <hgroup>
-    <h2>git repositories</h2>
-  </hgroup>
-  <article data-timings="">
-    <ul>
-<li>Shiny code</li>
-</ul>
-
-<p><a href="https://github.com/ejjarder/guild.distributions">https://github.com/ejjarder/guild.distributions</a></p>
+<li>Shiny code
 
 <ul>
-<li>Slidify Presentation:</li>
+<li><a href="https://github.com/ejjarder/guild.distributions">https://github.com/ejjarder/guild.distributions</a></li>
+</ul></li>
+<li>Slidify Presentation
+
+<ul>
+<li><a href="https://github.com/ejjarder/ejjarder.github.io/tree/master/guild.distributions">https://github.com/ejjarder/ejjarder.github.io/tree/master/guild.distributions</a></li>
+</ul></li>
 </ul>
 
-<p><a href="https://github.com/ejjarder/ejjarder.github.io/tree/master/guild.distributions">https://github.com/ejjarder/ejjarder.github.io/tree/master/guild.distributions</a></p>
-
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="" id="slide-14" style="background:;">
-  <hgroup>
-    <h2>Thank you!</h2>
-  </hgroup>
-  <article data-timings="">
-    <div style='text-align: center;'>
-    <img height = '400' src='assets/img/pearrenswee.jpg' />
-</div>
+<h2>Thank you!</h2>
 
 <div style='text-align: center;'>
 Pearrenswee - Zichar - Bonechewer - US
@@ -269,86 +140,26 @@ Pearrenswee - Zichar - Bonechewer - US
     <ul>
       <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=1 title=''>
+        data-slide=1 title='WoW Guild Distributions'>
          1
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=2 title='WoW Guild Distributions'>
+        data-slide=2 title='Usage Guide'>
          2
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=3 title='Usage Guide'>
+        data-slide=3 title='Data Source'>
          3
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=4 title='Usage Guide'>
+        data-slide=4 title='Implementation'>
          4
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=5 title='Usage Guide'>
-         5
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=6 title='Usage Guide'>
-         6
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=7 title='Usage Guide'>
-         7
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=8 title='Guild Overview'>
-         8
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=9 title='Member List'>
-         9
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=10 title='Class Distribution'>
-         10
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=11 title='Race Distribution'>
-         11
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=12 title='Gender Distribution'>
-         12
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=13 title='git repositories'>
-         13
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=14 title='Thank you!'>
-         14
       </a>
     </li>
   </ul>
