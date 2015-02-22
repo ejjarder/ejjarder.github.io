@@ -45,7 +45,9 @@ mode        : selfcontained # {standalone, draft}
 
 ```{r}
 library(RCurl)
-getURLContent('http://us.battle.net/api/wow/guild/Bonechewer/Zichar?fields=members')
+library(rjson)
+guild.data <- getURLContent('http://us.battle.net/api/wow/guild/Bonechewer/Zichar?fields=members')
+head(fromJSON(guild.data))
 ```
 
 ---
