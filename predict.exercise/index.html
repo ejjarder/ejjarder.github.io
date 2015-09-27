@@ -311,18 +311,18 @@ the <strong>classe</strong> of the test data.</p>
 <h3>Prediction Model</h3>
 
 <p>The generated prediction model had a
-99.7095%
+99.7452%
 out-of-bag success rate. The resulting confusion matrix is shown below.</p>
 
 <pre><code class="r">prediction.model$confusion
 </code></pre>
 
 <pre><code>##      A    B    C    D    E class.error
-## A 5577    2    0    0    1   0.0005376
-## B    9 3785    3    0    0   0.0031604
-## C    0   11 3409    2    0   0.0037989
-## D    0    0   19 3194    3   0.0068408
-## E    0    0    2    5 3600   0.0019407
+## A 5578    1    0    0    1   0.0003584
+## B    8 3786    3    0    0   0.0028970
+## C    0   12 3410    0    0   0.0035067
+## D    0    0   19 3196    1   0.0062189
+## E    0    0    1    4 3602   0.0013862
 </code></pre>
 
 <h3>Predictions on the Test Data</h3>
@@ -337,7 +337,7 @@ out-of-bag success rate. The resulting confusion matrix is shown below.</p>
 ## Levels: A B C D E
 </code></pre>
 
-<p>These predictions are correct, as verified by the course&#39;s <a href="https://class.coursera.org/predmachlearn-010/assignment">submissions page</a>.</p>
+<p>These predictions are correct, as verified by the course&#39;s submissions page.</p>
 
 </body>
 
