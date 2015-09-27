@@ -266,15 +266,14 @@ data other than those that are of a new window. Preprocessing is done by the
 <pre><code class="r">create.model
 </code></pre>
 
-<pre><code>## function (train.csv) 
-## {
-##     print(&quot;create.model()&quot;)
+<pre><code>## function(train.csv) {
+##     print(&#39;create.model()&#39;)
 ##     training.data &lt;- load.data(train.csv)
-##     print(&quot;Preprocessing training data...&quot;)
+##     print(&#39;Preprocessing training data...&#39;)
 ##     preproc.training.data &lt;- preprocess.data(training.data)
-##     print(&quot;Training the model...&quot;)
+##     print(&#39;Training the model...&#39;)
 ##     prediction.model &lt;- randomForest(classe ~ ., data = preproc.training.data)
-##     print(&quot;Model generated!&quot;)
+##     print(&#39;Model generated!&#39;)
 ##     prediction.model
 ## }
 </code></pre>
@@ -291,15 +290,14 @@ variables.</p>
 <pre><code class="r">predict.data
 </code></pre>
 
-<pre><code>## function (prediction.model, test.csv) 
-## {
-##     print(&quot;predict.data()&quot;)
+<pre><code>## function(prediction.model, test.csv) {
+##     print(&#39;predict.data()&#39;)
 ##     test.data &lt;- load.data(test.csv)
-##     print(&quot;Preprocessing testing data...&quot;)
+##     print(&#39;Preprocessing testing data...&#39;)
 ##     preproc.test.data &lt;- preprocess.data(test.data)
-##     print(&quot;Making predictions...&quot;)
+##     print(&#39;Making predictions...&#39;)
 ##     prediction &lt;- predict(prediction.model, preproc.test.data)
-##     print(&quot;Done predicting results!&quot;)
+##     print(&#39;Done predicting results!&#39;)
 ##     prediction
 ## }
 </code></pre>
